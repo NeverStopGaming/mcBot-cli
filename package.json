@@ -1,5 +1,5 @@
 {
-  "name": "mc-bot-tool",
+  "name": "mcbot-cli",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
