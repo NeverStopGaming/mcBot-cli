@@ -1,11 +1,13 @@
-import mineflayer from 'mineflayer';
+#!/usr/bin/env node
+
+import { createBot } from 'mineflayer';
 import { pathfinder, Movements, goals} from 'mineflayer-pathfinder'
 import yargs from 'yargs';
 
 class Bot {
     constructor(host : string, email : string, password : string, master : string) {
 
-        var bot = mineflayer.createBot({
+        var bot = createBot({
             host: host, 
             username: email, 
             password: password,
