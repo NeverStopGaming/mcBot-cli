@@ -17,7 +17,8 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "dev": "nodemon --config nodemon.json src/index.ts",
-    "dev:debug": "nodemon --config nodemon.json --inspect-brk src/index.ts"
+    "dev:debug": "nodemon --config nodemon.json --inspect-brk src/index.ts",
+    "build": "tsc src/index.ts && npm install -g ."
   },
   "bin" : {
     "mcbot-cli": "./src/index.js"
