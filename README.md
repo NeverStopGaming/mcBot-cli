@@ -30,6 +30,7 @@ if your use `follow` the bot will follow your around
 
 - [ ] docker support
 - [ ] multi instances
+- [ ] add more minecraft versions
 - [ ] overview ui
 - [ ] command pefix
 - [ ] add more commands
