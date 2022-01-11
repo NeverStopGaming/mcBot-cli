@@ -2,10 +2,9 @@
 
 import { createBot } from 'mineflayer';
 import { pathfinder, Movements, goals} from 'mineflayer-pathfinder'
-import yargs from 'yargs';
 
 class Bot {
-    constructor(host : string, email : string, password : string, master : string) {
+    constructor(host : string, email : string, password : string, master : string, prefix : string = "!") {
 
         var bot = createBot({
             host: host, 
@@ -24,8 +23,13 @@ class Bot {
         bot.on('chat', (username, message) => {
             if (username === bot.username) return
             if(master != null && username != master) return
+            if(!message.startsWith(prefix)) return
+
+            let command = message.split(prefix)[1].split(" ")
+
+            console.log(`${username} issued command: ${command}`)         
         
-            switch (message.toLowerCase()) {
+            switch (command[0].toLowerCase()) {
                 case 'stop': {
                     bot.pathfinder.stop()
                 }
@@ -77,6 +81,7 @@ const options = yargs
  .option("email", { alias: ["name","e"], describe: "Email of your minecraft account", type: "string", demandOption: true })
  .option("p", { alias: ["password","pw"], describe: "Your password (only online server)", type: "string", demandOption: false })
  .option("m", { alias: "master", describe: "If definded bot will only execute command of the master", type: "string", demandOption: false })
+ .option("prefix", { alias: "", describe: "Set the prefix of ingame command (Default: '!')", type: "string", demandOption: false })
  .argv;
 
- new Bot(options.host, options.email, options.password, options.master);
+ new Bot(options.host, options.email, options.password, options.master, options.prefix);
