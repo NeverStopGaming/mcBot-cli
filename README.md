@@ -12,6 +12,8 @@ use `mcbot-cli -h <Sevrer ip> -e <email> -p <password>` to run the bot on a onli
 
 add `-m <yourusername>` to set the master so that bot online executes your commands
 
+use `--prefix <prefix>` to set a command prefix (Default: "!")
+
 ### ingame
 
 if your type `come` in the chat, the bot will come to your location
