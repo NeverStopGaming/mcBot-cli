@@ -32,5 +32,5 @@ if your use `follow` the bot will follow your around
 - [ ] multi instances
 - [ ] add more minecraft versions
 - [ ] overview ui
-- [ ] command pefix
+- [X] command pefix
 - [ ] add more commands
